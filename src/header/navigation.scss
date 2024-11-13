@@ -1,0 +1,74 @@
+.list_menus {
+  display: flex;
+  position: relative;
+  padding-left: 60px;
+
+  .item_menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+
+    @include desc_black;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .item_menu:hover {
+    color: $Primary;
+  }
+
+  .item_menu:active {
+    transform: scale(0.97);
+  }
+
+  .item_menu.active {
+    color: $Primary;
+  }
+
+  .page {
+    display: flex;
+    margin-right: 15px;
+
+    .box_page {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+
+      i {
+        margin-left: -12px;
+      }
+    }
+
+    .menu_page {
+      display: none;
+      position: absolute;
+      bottom: -100px;
+      left: 300px;
+      padding: 10px 15px;
+      background-color: rgba(216, 215, 215, 0.4);
+      width: auto;
+      border-radius: 10px;
+
+      .item_page {
+        @include desc_black;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .item_page:hover {
+        color: $Primary;
+      }
+
+      .item_page:active {
+        transform: scale(0.97);
+      }
+    }
+    &:hover {
+      .menu_page {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.course_blog {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.4s;
+  cursor: pointer;
+
+  .desc {
+    @include desc_gray;
+  }
+  .image {
+    img {
+      width: 410px;
+      height: 250px;
+      border-radius: 20px 0 0 20px;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    word-wrap: 520px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .title_h4 {
+      @include title_h4;
+      margin-bottom: 16px;
+    }
+
+    .box_date {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .icon {
+        color: $Primary;
+      }
+    }
+  }
+
+  &:hover {
+    transform: translateY(-20px);
+    .title_h4 {
+      color: $Primary;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.my_course {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  cursor: pointer;
+
+  &:hover {
+    .title_h4 {
+      color: $Primary;
+    }
+  }
+
+  .image img {
+    width: 200px;
+  }
+
+  .right {
+    .title_h4 {
+      @include title_h4;
+      margin-bottom: 20px;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .icon {
+          font-size: 2.2rem;
+          color: $Primary;
+        }
+
+        .desc {
+          @include desc_gray;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .title_h2 {
+      color: $Primary;
+    }
+  }
+}

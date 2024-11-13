@@ -1,0 +1,100 @@
+.add_ons {
+  margin-top: 90px;
+  display: flex;
+  height: 324px;
+  justify-content: space-between;
+  align-items: center;
+  background: url("https://songhao2103.github.io/IMG_du_an_REACT/img_/img_media/bgc_explorer_course.png");
+
+  .left {
+    margin-left: 50px;
+    width: 450px;
+    .desc {
+      @include desc_gray;
+      margin-bottom: 20px;
+    }
+
+    .title_h2 {
+      @include title_h2;
+      margin-bottom: 24px;
+    }
+
+    .btn_primary {
+      @include btn_primary;
+    }
+  }
+
+  .right {
+    width: 900px;
+    display: flex;
+    position: relative;
+    height: 324px;
+    overflow: hidden;
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background-color: blue;
+      position: absolute;
+
+      border-radius: 15px;
+    }
+
+    .item1 {
+      top: 50px;
+      left: 100px;
+      background-color: blue;
+      transform: rotate(40deg);
+    }
+
+    .item2 {
+      top: 200px;
+      left: 200px;
+      background-color: orangered;
+    }
+
+    .item3 {
+      right: -10px;
+      background-color: rebeccapurple;
+      top: 100px;
+      transform: rotate(-20deg);
+    }
+
+    .item4 {
+      background-color: #ca0404;
+      top: 150px;
+      left: 300px;
+      transform: rotate(-40deg);
+    }
+
+    .item5 {
+      background-color: #197692;
+      top: 50px;
+      left: 400px;
+      transform: rotate(-60deg);
+    }
+
+    .item6 {
+      background-color: #c111d1;
+      top: 200px;
+      left: 500px;
+      transform: rotate(40deg);
+    }
+
+    .item7 {
+      background-color: #717533;
+      top: 130px;
+      left: 600px;
+      transform: rotate(-30deg);
+    }
+
+    .item8 {
+      bottom: -20px;
+      background-color: #06045e;
+      left: 330px;
+      transform: rotate(-40deg);
+    }
+  }
+}

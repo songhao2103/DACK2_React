@@ -1,0 +1,12 @@
+@import "./myCourse.scss";
+
+.list_my_courses {
+  margin-top: 90px;
+
+  .title_h1 {
+    @include title_h1;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 10px;
+  }
+}

@@ -1,0 +1,40 @@
+.info_course {
+  background-color: $Black;
+  display: flex;
+  width: 1920px;
+  padding: 50px 315px;
+  transform: translateX(-315px);
+  margin-top: 50px;
+
+  .info {
+    .desc {
+      @include desc_gray;
+      span {
+        color: $White;
+      }
+    }
+
+    .title_h2 {
+      @include title_h2;
+      margin-top: 20px;
+      color: $White;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 20px;
+
+      .item {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        .icon {
+          color: $Primary;
+        }
+      }
+    }
+  }
+}

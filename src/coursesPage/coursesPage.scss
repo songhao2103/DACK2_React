@@ -1,0 +1,7 @@
+@import "./listCourses.scss";
+@import "./navBar.scss";
+.courses_page {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90px;
+}

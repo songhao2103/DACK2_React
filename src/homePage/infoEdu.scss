@@ -1,0 +1,28 @@
+.info_edu {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90px;
+
+  .item {
+    display: flex;
+    width: 280px;
+    padding: 50px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 20px;
+    box-shadow: $Box-shadow1;
+
+    .title_h2 {
+      @include title_h2;
+      color: $Primary;
+    }
+
+    .desc {
+      @include desc_black;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.curriculum {
+  .desc {
+    @include desc_gray;
+  }
+
+  .top {
+    margin-bottom: 36px;
+  }
+
+  .list_lessons {
+    .lesson {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+
+      .title_h5 {
+        @include title_h5;
+        cursor: pointer;
+        margin-bottom: 5px;
+
+        &:hover {
+          color: $Primary;
+        }
+      }
+    }
+
+    .box_file {
+      .desc {
+        @include desc_gray;
+        cursor: pointer;
+        padding: 5px 10px;
+
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+}

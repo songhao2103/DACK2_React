@@ -1,0 +1,42 @@
+.learn_press {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 90px;
+
+  .right {
+    width: 520px;
+    padding-right: 20px;
+    .title_h2 {
+      @include title_h2;
+      margin-bottom: 24px;
+    }
+
+    .desc {
+      @include desc_gray;
+    }
+
+    ul {
+      margin-top: 12px;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .icon i {
+          color: green;
+        }
+
+        .desc {
+          color: $Black;
+        }
+      }
+    }
+
+    .btn_primary {
+      margin-top: 20px;
+      @include btn_primary;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 200px;
+
+  .logo_footer {
+    width: 340px;
+
+    .desc {
+      margin-top: 32px;
+    }
+  }
+
+  .item {
+    .title {
+      @include title_h4;
+      margin-bottom: 32px;
+    }
+
+    .desc {
+      @include desc_gray;
+      margin-bottom: 10px;
+    }
+  }
+
+  .item:last-child {
+    width: 410px;
+
+    .icon_contacts {
+      display: flex;
+      gap: 12px;
+
+      i {
+        cursor: pointer;
+
+        &:hover {
+          color: $Primary;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+  }
+}

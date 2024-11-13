@@ -1,0 +1,49 @@
+.faqs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .desc {
+    @include desc_gray;
+    padding-left: 20px;
+  }
+
+  .box_question {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 20px;
+
+    .question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      margin-bottom: 20px;
+
+      .title_h5 {
+        color: $Black;
+        font-family: Exo;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 19.2px */
+        text-transform: capitalize;
+      }
+
+      &:hover {
+        .title_h5 {
+          color: $Primary;
+        }
+      }
+    }
+  }
+
+  .desc {
+    display: none;
+  }
+
+  .desc.active {
+    display: block;
+  }
+}

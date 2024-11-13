@@ -1,0 +1,164 @@
+@import "./course.scss";
+@import "./lostsOfEditing.scss";
+
+.list_courses_of_page {
+  position: relative;
+  .nav_bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 50px;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    border-left: none;
+    padding-bottom: 10px;
+
+    .desc {
+      @include desc_gray;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+
+      .item {
+        cursor: pointer;
+        &:hover {
+          color: $Black;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+
+      .filter {
+        position: relative;
+        cursor: pointer;
+
+        .box_option {
+          display: none;
+          position: absolute;
+          width: 250px;
+          z-index: 100;
+          background-color: #ccc;
+          padding: 10px 20px;
+          border-radius: 15px;
+
+          .desc {
+            &:hover {
+              color: $Black;
+            }
+
+            &:active {
+              transform: scale(0.97);
+            }
+          }
+        }
+
+        &:hover {
+          > .desc {
+            color: $Black;
+          }
+          .box_option {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .search {
+      input {
+        padding: 10px 10px;
+        width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .box_add_course {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+    .add_course {
+      padding: 40px;
+      background-color: #ccc;
+      width: 600px;
+      z-index: 10;
+      border-radius: 20px;
+      position: relative;
+
+      .item {
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+          padding: 5px 10px;
+          border-radius: 10px;
+          width: 350px;
+        }
+
+        label {
+          @include desc_gray;
+        }
+      }
+
+      .btn_primary {
+        @include btn_primary;
+        margin-top: 10px;
+        float: right;
+      }
+
+      .close {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-family: Jost;
+        font-size: 2.6rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+
+        &:hover {
+          background-color: $Primary;
+          color: white;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+  }
+
+  .list_courses {
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .losts_of_editing {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+}

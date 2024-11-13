@@ -1,0 +1,89 @@
+.register {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  background: linear-gradient(
+    rgba(252, 249, 82, 0.37),
+    rgba(165, 4, 197, 0.281)
+  );
+
+  .form_register {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.17);
+    width: 600px;
+
+    padding: 20px 30px;
+    border-radius: 10px;
+
+    .title_h2 {
+      @include title_h2;
+      border-bottom: 2px solid #272727;
+      padding-bottom: 10px;
+    }
+
+    label {
+      @include desc_gray;
+      margin-top: 10px;
+    }
+
+    input {
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    .error {
+      color: red;
+      display: none;
+    }
+
+    .error.active {
+      display: block;
+    }
+
+    .box_input {
+      width: 100%;
+      display: flex;
+      position: relative;
+
+      input {
+        width: 100%;
+      }
+
+      .box_eye {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+
+        i {
+          position: absolute;
+          cursor: pointer;
+        }
+
+        i.active {
+          display: none;
+        }
+      }
+    }
+    .bottom {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .desc {
+        @include desc_gray;
+        cursor: pointer;
+
+        &:hover {
+          color: $Black;
+        }
+      }
+
+      .btn_primary {
+        @include btn_primary;
+      }
+    }
+  }
+}

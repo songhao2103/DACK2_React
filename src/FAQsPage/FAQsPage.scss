@@ -1,0 +1,60 @@
+.FAQs_page {
+  margin-top: 50px;
+
+  .title_h2 {
+    @include title_h2;
+    margin: 60px 0;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    .column {
+      width: 47%;
+
+      .item {
+        margin-bottom: 50px;
+
+        .title {
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+
+          .title_h5 {
+            @include title_h5;
+            cursor: pointer;
+          }
+
+          .icon {
+            i {
+              transition: 0.4s;
+            }
+            .active {
+              transform: rotate(180deg);
+            }
+          }
+
+          &:hover {
+            .title_h5 {
+              color: $Primary;
+            }
+
+            .icon {
+              color: $Primary;
+            }
+          }
+        }
+
+        .desc {
+          @include desc_gray;
+          margin: 20px 0 0 20px;
+        }
+      }
+    }
+  }
+
+  .media {
+    margin-top: 40px;
+  }
+}

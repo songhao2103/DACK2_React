@@ -1,0 +1,128 @@
+.box_right {
+  width: 250px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+
+  .sign {
+    margin-right: -250px;
+    // background-color: red; 
+    .desc {
+      @include desc_black;
+      font-weight: 500;
+      cursor: pointer;
+
+      &:hover {
+        color: $Primary;
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+  }
+
+  .sign.active {
+    z-index: 100;
+  }
+
+  .box_user {
+    display: flex;
+    position: relative;
+    width: 35px;
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      color: $Dark_gray;
+      border: 2px solid $Dark_gray;
+      cursor: pointer;
+
+      &:hover {
+        color: $Primary;
+        border-color: $Primary;
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+
+    .options_user {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background-color: rgba($color: #000000, $alpha: 0.2);
+      border-radius: 10px;
+      position: absolute;
+      left: -150px;
+      top: 40px;
+      width: 200px;
+
+      .option {
+        cursor: pointer;
+        @include desc_gray;
+
+        &:hover {
+          color: $Primary;
+          font-size: 2rem;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+      p.desc {
+        margin-bottom: 10px;
+        @include desc_black;
+      }
+    }
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 285px;
+    input {
+      padding: 10px 12px;
+      border-radius: 20px;
+      width: 250px;
+      transform: translateX(290px);
+      transition: 0.4s;
+      border: 1px solid #ccc;
+    }
+
+    input.active {
+      transform: translateX(35px);
+    }
+
+    input.hidden_sign_up.active {
+      transform: translateX(0px);
+    }
+
+    .icon {
+      width: 35px;
+      height: 35px;
+      border: 2px solid $Primary;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      color: $Primary;
+      z-index: 1000;
+    }
+
+    .icon.hidden_sign_up {
+      padding: 0 10px;
+      transform: translateX(-35px);
+    }
+  }
+}

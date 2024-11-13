@@ -1,0 +1,41 @@
+@import "./course.scss";
+.box_list_courses {
+  .top {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      .title_h2 {
+        @include title_h2;
+        margin-bottom: 12px;
+      }
+
+      .desc {
+        @include desc_gray;
+      }
+    }
+
+    .right {
+      .btn_white {
+        @include btn_white;
+      }
+    }
+  }
+
+  .list_courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 34px;
+    height: 1030px;
+    overflow: hidden;
+    padding-top: 25px;
+    padding-bottom: 5px;
+  }
+
+  .list_courses.all {
+    height: auto;
+  }
+}

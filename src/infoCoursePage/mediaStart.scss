@@ -1,0 +1,50 @@
+.media_start {
+  width: 480px;
+  height: 400px;
+  background-color: $White;
+  right: 350px;
+  box-shadow: $Box-shadow1;
+  border-radius: 20px;
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  position: fixed;
+
+  .image img {
+    width: 480px;
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .desc {
+        @include desc_black;
+      }
+
+      .old.sale {
+        color: $Dark_gray;
+        text-decoration: line-through;
+      }
+
+      .new {
+        color: red;
+      }
+      .new.free {
+        color: green;
+      }
+    }
+
+    .btn_primary {
+      @include btn_primary;
+    }
+  }
+}

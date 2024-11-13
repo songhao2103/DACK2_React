@@ -1,0 +1,65 @@
+.theme_word_press {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: url("https://songhao2103.github.io/IMG_du_an_REACT/img_/img_media/bgc_providing.png");
+  height: 300px;
+  margin-top: 90px;
+  overflow: hidden;
+  border-radius: 20px;
+
+  .content {
+    text-align: center;
+    .desc {
+      @include desc_gray;
+    }
+
+    .title_h2 {
+      @include title_h2;
+      margin-bottom: 20px;
+    }
+
+    .btn_primary {
+      margin-top: 12px;
+      @include btn_primary;
+      display: inline-block;
+    }
+  }
+
+  img {
+    position: absolute;
+  }
+
+  .image_1 {
+    left: 50px;
+    top: 50px;
+    z-index: 10;
+  }
+
+  .image_2 {
+    left: 0;
+    top: 0;
+  }
+
+  .image_3 {
+    left: 0;
+    bottom: 0;
+  }
+
+  .image_4 {
+    right: 20px;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  .image_5 {
+    right: 0;
+    bottom: 30px;
+  }
+
+  .image_6 {
+    right: 10px;
+    top: 0;
+  }
+}

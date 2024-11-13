@@ -1,0 +1,161 @@
+@import "./course.scss";
+.courses_page {
+  .list_coursesC {
+    width: 990px;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 46px;
+
+      .left {
+        .title_h2 {
+          @include title_h2;
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .search {
+          display: flex;
+          position: relative;
+
+          input {
+            padding: 8px 12px;
+            width: 250px;
+            border-bottom: 3px solid black;
+          }
+
+          .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 8px;
+            cursor: pointer;
+
+            &:hover {
+              border: 1px solid #b6b5b5;
+            }
+          }
+        }
+
+        .icon_menu {
+          display: flex;
+          gap: 20px;
+
+          i {
+            font-size: 20px;
+            cursor: pointer;
+
+            &:hover {
+              color: $Primary;
+            }
+
+            &:active {
+              transform: scale(0.97);
+            }
+          }
+
+          i.active {
+            color: $Primary;
+          }
+        }
+      }
+    }
+
+    .box_list.rows {
+      height: 1130px;
+      overflow: hidden;
+
+      .list.rows {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .list.table {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: inherit;
+        gap: 30px;
+      }
+    }
+
+    .box_list.table {
+      @extend .box_list, .rows;
+      height: 1000px;
+    }
+
+    .list_page {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: center;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        border-radius: 50%;
+
+        &:hover {
+          background-color: $Primary;
+          color: white;
+          box-shadow: $Box-shadow1;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+
+      .icon.block {
+        cursor: not-allowed;
+        color: #ccc;
+
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+
+      .stt {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        @include desc_black;
+
+        &:hover {
+          background-color: $Primary;
+          color: white;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+
+      .stt.active {
+        background-color: $Primary;
+        color: white;
+      }
+    }
+  }
+}

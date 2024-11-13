@@ -1,0 +1,161 @@
+.my_course_content {
+  margin-top: 90px;
+  position: relative;
+  .title_h2 {
+    @include title_h2;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    border-top: 3px solid #ccc;
+    padding-top: 20px;
+
+    .list_lessons {
+      width: 18%;
+      border-right: 2px solid #ccc;
+      padding-right: 10px;
+
+      .desc.add {
+        @include desc_gray;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        padding: 5px 0;
+        border-radius: 10px;
+        transition: 0.3s;
+
+        &:hover {
+          border-color: #000;
+          color: $Black;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+      .lesson {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+
+        .title_h5 {
+          @include title_h5;
+          cursor: pointer;
+          margin-bottom: 5px;
+
+          &:hover {
+            color: $Primary;
+          }
+        }
+      }
+
+      .box_file {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+
+        .desc {
+          @include desc_gray;
+          cursor: pointer;
+          padding: 5px 5px;
+
+          &:hover {
+            color: red;
+          }
+        }
+
+        .delete {
+          &:active {
+            transform: scale(0.97);
+          }
+        }
+      }
+
+      .file_upload {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        .desc {
+          @include desc_gray;
+          text-decoration: underline;
+        }
+
+        .add {
+          // background-color: red;
+          border: 1px solid #ccc;
+          width: 100px;
+          @include desc_gray;
+          padding: 3px 0;
+          border-radius: 5px;
+          background-color: transparent;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: $Box-shadow1;
+            color: $Black;
+          }
+
+          &:active {
+            transform: scale(0.97);
+          }
+        }
+      }
+    }
+  }
+
+  .add_lesson {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    padding: 5px 20px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    backdrop-filter: blur(5px);
+
+    .name {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+    }
+
+    .add {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      cursor: pointer;
+      float: inline-end;
+      margin-top: 10px;
+
+      &:hover {
+        border-color: $Black;
+        color: $Black;
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+  }
+
+  .box_view {
+    width: 80%;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    object-fit: cover;
+    display: flex;
+  }
+}

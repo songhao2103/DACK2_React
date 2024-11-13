@@ -1,0 +1,104 @@
+.course {
+  width: 410px;
+  border-radius: 20px 20px 0px 0px;
+  padding: 20px;
+  box-shadow: $Box-shadow1;
+  transition: 0.4s;
+  cursor: pointer;
+
+  .image {
+    transform: translate(-20px, -20px);
+
+    img {
+      height: 250px;
+      width: 410px;
+      border-radius: 20px 20px 0px 0px;
+    }
+  }
+
+  .desc {
+    @include desc_gray;
+  }
+
+  .content {
+    .desc span {
+      @include desc_black;
+    }
+
+    .title_h4 {
+      @include title_h4;
+      margin-top: 12px;
+    }
+
+    .info {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-top: 16px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .icon {
+          color: $Primary;
+        }
+      }
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 32px;
+
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .old {
+          @include desc_gray;
+        }
+
+        .old.sale {
+          text-decoration: line-through;
+        }
+
+        .new {
+          @include desc_black;
+        }
+
+        .new.free {
+          color: green;
+        }
+      }
+
+      .view_course {
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 20px;
+
+        &:hover {
+          color: $Primary;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    transform: translateY(-20px);
+    box-shadow: $Box-shadow2;
+
+    .content {
+      .title_h4 {
+        color: $Primary;
+      }
+    }
+  }
+}

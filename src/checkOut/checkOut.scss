@@ -1,0 +1,146 @@
+.check_out {
+  .title_h1 {
+    @include title_h1;
+    margin-top: 90px;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .course_order {
+      width: 45%;
+      border: 2px solid #ececec;
+      padding: 20px;
+      border-radius: 20px;
+
+      .desc {
+        @include desc_gray;
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          width: 120px;
+          height: 80px;
+          border-radius: 10px;
+        }
+
+        .title_h5 {
+          @include title_h5;
+          width: 65%;
+        }
+      }
+
+      .subtotal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+
+        .box_price {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .sale {
+            color: red;
+          }
+        }
+      }
+
+      .total {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .desc {
+          color: black;
+        }
+      }
+    }
+
+    .pay_course {
+      width: 45%;
+      background-color: #ececec;
+      padding: 20px;
+
+      .title_h2 {
+        @include title_h2;
+        margin-bottom: 20px;
+      }
+
+      .box_input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+
+        .desc {
+          @include desc_black;
+          font-weight: 500;
+          font-size: 2rem;
+        }
+
+        .icon {
+          span {
+            @include desc_black;
+            font-weight: 900;
+            font-size: 2.4rem;
+            font-style: italic;
+
+            &:first-child {
+              color: rgb(3, 3, 143);
+            }
+
+            &:last-child {
+              color: rgb(6, 84, 228);
+            }
+          }
+        }
+      }
+      .btn_primary {
+        @include btn_primary;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    .alert_error {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      background-color: $Dark_gray;
+      opacity: 0.8;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px;
+
+      .desc {
+        @include desc_black;
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 500;
+      }
+
+      .btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+
+        .btn_white {
+          @include btn_white;
+        }
+      }
+    }
+  }
+}

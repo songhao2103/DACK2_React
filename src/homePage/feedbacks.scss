@@ -1,0 +1,51 @@
+.feedbacks {
+  margin-top: 90px;
+
+  .top {
+    text-align: center;
+    margin-bottom: 50px;
+    .title_h2 {
+      @include title_h2;
+      margin-bottom: 12px;
+    }
+
+    .desc {
+      @include desc_gray;
+    }
+  }
+
+  .list_feedbacks {
+    display: flex;
+    gap: 30px;
+
+    .feedback {
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: $Box-shadow1;
+
+      .apostrophe {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+
+        .item {
+          height: 30px;
+          width: 10px;
+          background-color: #ccc;
+          clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+          transform: rotate(30deg);
+        }
+      }
+
+      .desc {
+        @include desc_gray;
+      }
+
+      .title_h4 {
+        @include title_h4;
+        margin-top: 30px;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

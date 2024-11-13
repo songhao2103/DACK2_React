@@ -1,0 +1,102 @@
+.box_list_banner {
+  width: 1920px;
+  height: 700px;
+  overflow: hidden;
+  transform: translateX(-315px);
+  // padding: 0 315px;
+  // margin: 0 auto;
+  .list_banner {
+    display: flex;
+    width: calc(1920 * 5);
+    transition: transform 0.7s ease-in-out;
+    .banner {
+      width: 1920px;
+      // transform: translateX(-315px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 700px;
+      // transform: translateX(-3840px);
+      background: rgb(177, 175, 217);
+      background: linear-gradient(
+        90deg,
+        rgba(177, 175, 217, 1) 12%,
+        rgba(164, 241, 202, 0.9724264705882353) 46%,
+        rgba(135, 254, 196, 1) 69%,
+        rgba(100, 255, 151, 1) 88%
+      );
+      padding: 0 315px;
+      .content {
+        width: 700px;
+        .title_h1 {
+          @include title_h1;
+          margin-bottom: 24px;
+        }
+        .desc {
+          @include desc_gray;
+        }
+
+        .btn_primary {
+          @include btn_primary;
+          display: inline-block;
+          margin-top: 20px;
+        }
+      }
+      .image {
+        height: 700px;
+        width: 700px;
+        object-fit: cover;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .banner:nth-child(2) {
+      background: rgb(123, 123, 126);
+      background: linear-gradient(
+        48deg,
+        rgba(123, 123, 126, 1) 6%,
+        rgba(186, 200, 193, 1) 40%,
+        rgba(141, 175, 158, 1) 67%,
+        rgba(172, 221, 188, 1) 99%
+      );
+    }
+
+    .banner:nth-child(3) {
+      background: rgb(236, 235, 147);
+      background: linear-gradient(
+        48deg,
+        rgba(236, 235, 147, 1) 6%,
+        rgba(207, 215, 152, 1) 40%,
+        rgba(162, 218, 158, 1) 65%,
+        rgba(187, 221, 172, 1) 99%
+      );
+    }
+
+    .banner:nth-child(4) {
+      background: rgb(237, 184, 235);
+      background: linear-gradient(
+        317deg,
+        rgba(237, 184, 235, 1) 6%,
+        rgba(236, 238, 129, 1) 40%,
+        rgba(162, 218, 158, 1) 65%,
+        rgba(235, 161, 237, 1) 99%
+      );
+    }
+
+    .banner:nth-child(5) {
+      background: rgb(224, 237, 141);
+      background: linear-gradient(
+        317deg,
+        rgba(224, 237, 141, 0.804359243697479) 6%,
+        rgba(250, 152, 133, 1) 40%,
+        rgba(162, 218, 158, 1) 65%,
+        rgba(128, 159, 221, 1) 99%
+      );
+    }
+  }
+}

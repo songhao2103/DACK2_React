@@ -1,0 +1,24 @@
+.information {
+  // background-color: rgb(203, 203, 206);
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+
+  .desc {
+    @include desc_gray;
+  }
+  .item {
+    margin-bottom: 20px;
+    display: flex;
+
+    .desc:first-child {
+      font-weight: 500;
+      width: 150px;
+      color: $Black;
+    }
+
+    .not_update {
+      color: red;
+      font-style: italic;
+    }
+  }
+}

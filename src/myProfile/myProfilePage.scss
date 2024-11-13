@@ -1,0 +1,50 @@
+@import "./myProfile";
+@import "./updateProfile.scss";
+@import "./changePassword.scss";
+@import "./ChangeEmail.scss";
+
+.my_profile_page {
+  margin-top: 90px;
+
+  .title_h1 {
+    @include title_h1;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    display: flex;
+    border: 2px solid #ccc;
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: $Box-shadow1;
+
+    .nav_bar_profile {
+      z-index: 100;
+      width: 160px;
+
+      .title_h5 {
+        @include title_h5;
+        margin-bottom: 20px;
+        cursor: pointer;
+
+        &:hover {
+          color: $Primary;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+
+      .title_h5.active {
+        color: $Primary;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px 0 0 10px;
+        border-right: none;
+        width: 161px;
+        background-color: #fff;
+      }
+    }
+  }
+}

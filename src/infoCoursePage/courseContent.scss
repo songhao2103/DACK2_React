@@ -1,0 +1,72 @@
+@import "./curriculum";
+@import "./instructor";
+@import "./FAQs";
+@import "./reviews.scss";
+
+.course_content {
+  width: 790px;
+  padding: 30px;
+  margin: 50px 0;
+  position: relative;
+
+  .nav_content ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+
+    .title_h4 {
+      @include title_h4;
+      cursor: pointer;
+
+      &:hover {
+        color: $Primary;
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+
+    .title_h4.active {
+      color: $Primary;
+    }
+  }
+
+  .overview {
+    .desc {
+      @include desc_gray;
+      margin-bottom: 20px;
+    }
+  }
+
+  .alert {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba($color: $Primary, $alpha: 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    .desc {
+      @include desc_gray;
+      font-size: 2.2rem;
+      text-align: center;
+      color: white;
+    }
+
+    .btns {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 30px;
+      justify-content: center;
+
+      .btn_primary {
+        @include btn_white;
+      }
+    }
+  }
+}

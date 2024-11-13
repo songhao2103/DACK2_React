@@ -1,0 +1,175 @@
+@import "./course.scss";
+
+.blog_page {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  .desc {
+    @include desc_gray;
+  }
+
+  .box_left {
+    width: 990px;
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .title_h2 {
+        @include title_h2;
+      }
+
+      .box_right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .box_search {
+          display: flex;
+          align-items: center;
+          position: relative;
+
+          input {
+            width: 250px;
+            padding: 5px 15px;
+            border-bottom: 2px solid #ccc;
+          }
+
+          input:focus {
+            border-bottom: 2px solid black;
+          }
+
+          .icon {
+            position: absolute;
+            right: 0;
+            font-size: 18px;
+          }
+        }
+
+        .box_icon {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          i {
+            font-size: 20px;
+
+            &:hover {
+              color: $Primary;
+              cursor: pointer;
+            }
+
+            &:last-child {
+              color: $Primary;
+            }
+          }
+        }
+      }
+    }
+
+    .list_articles {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  .box_right_blog {
+    width: 270px;
+    // border-left: 1px solid #000;
+
+    .box_category {
+      .title_h4 {
+        @include title_h4;
+        margin-bottom: 20px;
+      }
+
+      .list_category {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        // width: 100%;
+
+        .item {
+          display: flex;
+          width: 270px;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .recent_posts {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 30px;
+
+      .title_h4 {
+        @include title_h4;
+        margin-bottom: 10px;
+      }
+
+      .list_post {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .item {
+          display: flex;
+          align-items: center;
+          transition: 0.4s;
+          cursor: pointer;
+
+          img {
+            width: 90px;
+            height: 90px;
+            border-radius: 12px;
+            object-fit: cover;
+          }
+
+          .title_h5 {
+            @include title_h5;
+            padding: 0 16px;
+          }
+
+          &:hover {
+            transform: translateY(-10px);
+            .title_h5 {
+              color: $Primary;
+            }
+          }
+        }
+      }
+    }
+
+    .tags {
+      margin-top: 40px;
+      .title_h4 {
+        @include title_h4;
+        margin-bottom: 15px;
+      }
+      .list_tags {
+        width: 270px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .item {
+          margin-right: 8px;
+          padding: 8px 18px;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          margin-top: 8px;
+          cursor: pointer;
+
+          &:hover {
+            border-color: black;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.update_profile {
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+  position: relative;
+
+  .desc {
+    @include desc_gray;
+  }
+
+  .desc.error {
+    color: red;
+    font-style: italic;
+  }
+
+  .item_input {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 10px;
+
+    input {
+      border: 1px solid #ccc;
+      width: 500px;
+      margin-top: -20px;
+      padding: 10px 10px;
+      border-radius: 10px;
+    }
+
+    .box_input {
+      display: flex;
+      position: relative;
+
+      .icon {
+        display: flex;
+        position: absolute;
+        top: -10px;
+        right: 25px;
+        cursor: pointer;
+
+        i {
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  .btn_primary {
+    @include btn_primary;
+    float: inline-end;
+  }
+
+  .alert_profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: $Dark_gray;
+    width: 300px;
+    padding: 20px 0px;
+    border-radius: 20px;
+    box-shadow: $Box-shadow1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .desc {
+      color: white;
+    }
+  }
+}

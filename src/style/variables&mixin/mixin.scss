@@ -1,0 +1,110 @@
+@import "./variables.scss";
+
+@mixin btn_primary {
+  display: flex;
+  height: 4.8rem;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 24px;
+  background: $Primary;
+  color: $White;
+  font-family: Jost;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  text-transform: capitalize;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgb(182, 94, 36);
+
+  &:hover {
+    color: $Primary;
+    background-color: $White;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+@mixin btn_white {
+  @include btn_primary;
+  background-color: $White;
+  color: $Primary;
+
+  &:hover {
+    color: $White;
+    background-color: $Primary;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+@mixin desc_gray {
+  color: var(--Dark_gray, #555);
+  font-family: Jost;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin desc_black {
+  color: var(--Black, #000);
+  font-family: Jost;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 27px */
+}
+
+@mixin title_h1 {
+  color: var(--Black, #000);
+  font-family: Exo;
+  font-size: 4.8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 57.6px */
+  text-transform: capitalize;
+}
+
+@mixin title_h2 {
+  color: var(--Black, #000);
+  font-family: Exo;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 38.4px */
+  text-transform: capitalize;
+}
+
+@mixin title_h4 {
+  color: var(--Black, #000);
+  font-family: Exo;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */
+  text-transform: capitalize;
+}
+@mixin title_h5 {
+  color: var(--Black, #000);
+  font-family: Exo;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 19.2px */
+  text-transform: capitalize;
+}
+
+@mixin setRootFontSize($size) {
+  html {
+    font-size: $size;
+  }
+}
+
+@include setRootFontSize(10px);

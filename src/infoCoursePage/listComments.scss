@@ -1,0 +1,121 @@
+.list_comments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+
+  .comment {
+    border-bottom: 3px solid #ccc;
+    // padding-bottom: 20px;
+    .desc {
+      @include desc_gray;
+    }
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      .title_h5 {
+        @include title_h5;
+      }
+    }
+
+    .content {
+      @include desc_gray;
+      padding-left: 20px;
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      float: right;
+      cursor: pointer;
+
+      .delete {
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+          color: $Primary;
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+
+      .reply {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &:hover {
+          color: $Primary;
+
+          .desc {
+            color: $Primary;
+          }
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+  }
+
+  .write_comment {
+    .title_h5 {
+      @include title_h5;
+    }
+    textarea {
+      width: 100%;
+      overflow: hidden;
+      resize: none;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      padding: 10px;
+      outline: none;
+      @include desc_gray;
+
+      &:focus {
+        // border: none;
+        border-bottom: 2px solid #000;
+      }
+    }
+
+    .bottom {
+      .btn_confirm {
+        padding: 4px 15px;
+        @include desc_gray;
+        color: #ccc;
+        font-size: 1.6rem;
+        border-radius: 25px;
+        float: right;
+        margin-top: 10px;
+      }
+
+      .btn_confirm.active {
+        background-color: $Primary;
+        color: white;
+
+        &:active {
+          transform: scale(0.97);
+        }
+      }
+    }
+  }
+
+  .bgc_alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    z-index: 1000;
+  }
+}

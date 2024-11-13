@@ -1,0 +1,55 @@
+// variables
+@import "./variables&mixin/variables.scss";
+
+// mixin
+@import "./variables&mixin/mixin.scss";
+
+//Component======================================
+//header
+@import "../header/header.scss";
+//footer
+@import "../footer/footer.scss";
+//homePage
+@import "../homePage/homPage.scss";
+
+//CoursesPage
+@import "../coursesPage/coursesPage.scss";
+
+//InfoCoursePage
+@import "../infoCoursePage/infoCoursePage.scss";
+
+//Register
+@import "../register/register.scss";
+
+//Log In
+@import "../logIn/logIn.scss";
+
+//CheckOut
+@import "../checkOut/checkOut.scss";
+
+//ScrollToTop
+@import "../scrollToTop/scrollToTop.scss";
+
+//ListMyCourses
+@import "../listMyCourses/listMyCourses.scss";
+
+//My Profile
+@import "../myProfile/MyProfilePage";
+
+//MyCourseContent
+@import "../myCourseContent/myCourseContent.scss";
+
+//ListCoursesOfPage
+@import "../listCoursesOfPage/listCoursesOfPage.scss";
+
+//BlogPage
+@import "../blog/blogPage.scss";
+
+//Breadcrumb
+@import "../breadcrumb/breadcrumb.scss";
+
+//Contact
+@import "../contact/contact.scss";
+
+//FAQsPage
+@import "../FAQsPage/FAQsPage.scss";

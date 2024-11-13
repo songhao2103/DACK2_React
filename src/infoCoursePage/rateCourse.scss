@@ -1,0 +1,74 @@
+.rate_course {
+  .title_h4 {
+    @include title_h4;
+    margin-bottom: 30px;
+  }
+
+  .box_rate {
+    .top {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+
+      .title_h1 {
+        @include title_h1;
+      }
+
+      .right {
+        .rate {
+          display: flex;
+          gap: 5px;
+          font-size: 20px;
+          color: $Primary;
+        }
+
+        .desc {
+          @include desc_gray;
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .list_options_rate {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .option {
+        display: flex;
+        gap: 17px;
+        justify-content: space-between;
+
+        i {
+          color: $Primary;
+        }
+
+        .desc {
+          @include desc_gray;
+        }
+
+        .bar {
+          display: flex;
+          width: 550px;
+
+          .item {
+            height: 10px;
+          }
+
+          .item:first-child {
+            width: var(--width);
+            height: 10px;
+            background-color: $Primary;
+          }
+
+          .item:last-child {
+            background-color: #c4c4c4;
+            height: 10px;
+            width: calc(100% - var(--width));
+          }
+        }
+      }
+    }
+  }
+}
