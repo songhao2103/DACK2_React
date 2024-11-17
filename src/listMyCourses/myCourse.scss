@@ -85,6 +85,8 @@
     top: 0;
     left: 0;
     background-color: rgba($color: #000000, $alpha: 0.4);
+    display: none;
+
     .alert {
       background-color: #fff;
       padding: 30px 50px;
@@ -115,5 +117,9 @@
         }
       }
     }
+  }
+
+  .box_alert.active {
+    display: flex;
   }
 }

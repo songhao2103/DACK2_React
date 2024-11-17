@@ -25,6 +25,9 @@
       @include desc_black;
     }
 
+    .name {
+      height: 50px;
+    }
     .title_h4 {
       @include title_h4;
       margin-top: 12px;

@@ -27,7 +27,11 @@
           input {
             padding: 8px 12px;
             width: 250px;
-            border-bottom: 3px solid black;
+            border-bottom: 3px solid #ccc;
+
+            &:focus {
+              border-bottom: 3px solid #000000;
+            }
           }
 
           .icon {

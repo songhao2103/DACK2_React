@@ -142,17 +142,17 @@ const MyCourseContent = () => {
     }
     setPdfViewed(0);
     setDataCourse(updateDataCourse);
-    const listUsers = JSON.parse(localStorage.getItem("listUsers"));
-    const listCoursesOfUser = [...userLogged.courses];
-    const newListCoursesOfUser = listCoursesOfUser.map((course) =>
-      course.id === updateDataCourse.id ? updateDataCourse : course
-    );
-    const newUser = { ...userLogged, courses: newListCoursesOfUser };
-    const newListUsers = listUsers.map((user) =>
-      user.email === userLogged.email ? newUser : user
-    );
+    // const listUsers = JSON.parse(localStorage.getItem("listUsers"));
+    // const listCoursesOfUser = [...userLogged.courses];
+    // const newListCoursesOfUser = listCoursesOfUser.map((course) =>
+    //   course.id === updateDataCourse.id ? updateDataCourse : course
+    // );
+    // const newUser = { ...userLogged, courses: newListCoursesOfUser };
+    // const newListUsers = listUsers.map((user) =>
+    //   user.email === userLogged.email ? newUser : user
+    // );
 
-    localStorage.setItem("listUsers", JSON.stringify(newListUsers));
+    // localStorage.setItem("listUsers", JSON.stringify(newListUsers));
   };
 
   return (

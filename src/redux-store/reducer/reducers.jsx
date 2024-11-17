@@ -206,7 +206,6 @@ export const reducers = (state = initialState, action) => {
 
     // hàm xử lý khi người dùng xóa course khỏi danh sách của họ
     case "USERDELETECOURSEFROMMYLIST": {
-      console.log(action.payload.newUserLogged);
 
       return { ...state, userLogged: action.payload.newUserLogged };
     }
