@@ -49,7 +49,6 @@ const CheckOut = () => {
   };
 
   //Hàm lựa chọn click button ở thông báo
-
   const handleClickAlert = (value) => {
     switch (value) {
       case "to log in":

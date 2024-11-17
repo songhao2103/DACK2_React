@@ -28,9 +28,7 @@ const CourseContent = () => {
         const findCourse =
           userLogged.courses.length === 0
             ? null
-            : userLogged.courses.find(
-                (course) => course.id === courseViewed.id
-              );
+            : userLogged.courses.find((id) => id === courseViewed.idCourse);
         //Nếu đã đăng ký tài khoản
         if (findCourse !== null && findCourse !== undefined) {
           setHiddenContent((prevHiddenContent) =>
@@ -62,7 +60,6 @@ const CourseContent = () => {
         {
           setHiddenAlert("");
         }
-
         break;
     }
   };

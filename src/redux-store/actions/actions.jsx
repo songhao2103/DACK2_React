@@ -73,3 +73,13 @@ export const actionAdminDeleteCourse = {
 export const actionAdminUpdateCourse = {
   type: "ADMINUPDATECOURSE",
 };
+
+//Action instructor thêm bài học
+export const actionInstructorAddLesson = {
+  type:"INSTRUCTORADDLESSON"
+}
+
+//action user delete course from my list
+export const actionUserDeleteCourseFromMyList = {
+  type:"USERDELETECOURSEFROMMYLIST"
+}

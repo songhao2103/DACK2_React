@@ -79,8 +79,9 @@ export const reducers = (state = initialState, action) => {
         if (state.userLogged.account.email === user.account.email) {
           const newUser = {
             ...user,
-            courses: [...user.courses, state.courseViewed],
+            courses: [...user.courses, state.courseViewed.idCourse],
           };
+          localStorage.setItem("accountIsSaved", JSON.stringify(newUser));
           return newUser;
         } else {
           return user;
@@ -97,7 +98,7 @@ export const reducers = (state = initialState, action) => {
         ...state,
         userLogged: {
           ...state.userLogged,
-          courses: [...state.userLogged.courses, state.courseViewed],
+          courses: [...state.userLogged.courses, state.courseViewed.idCourse],
         },
       };
     }
@@ -120,7 +121,7 @@ export const reducers = (state = initialState, action) => {
         ...state.userLogged,
         account: { ...state.userLogged.account, ...newAccountUser },
       };
-
+      localStorage.setItem("accountIsSaved", JSON.stringify(newUserLogged));
       const updateListUsers = listUsers.map((user) => {
         if (user.account.id === newUserLogged.account.id) {
           return newUserLogged;
@@ -140,9 +141,13 @@ export const reducers = (state = initialState, action) => {
       const listUsers = JSON.parse(localStorage.getItem("listUsers"));
       const newListUsers = listUsers.map((user) => {
         if (user.account.id === state.userLogged.account.id) {
-          return {
+          const newUser = {
             ...user,
             account: { ...user.account, email: action.payload.email },
+          };
+          localStorage.setItem("accountIsSaved", JSON.stringify(newUser));
+          return {
+            newUser,
           };
         } else {
           return user;
@@ -165,13 +170,15 @@ export const reducers = (state = initialState, action) => {
       const listUsers = JSON.parse(localStorage.getItem("listUsers"));
       const newListUsers = listUsers.map((user) => {
         if (user.account.id === state.userLogged.account.id) {
-          return {
+          const newUser = {
             ...user,
             account: {
               ...user.account,
               password: action.payload.formData.newPassword,
             },
           };
+          localStorage.setItem("accountIsSaved", JSON.stringify(newUser));
+          return newUser;
         } else {
           return user;
         }
@@ -195,6 +202,13 @@ export const reducers = (state = initialState, action) => {
     case "VIEWCONTENTCOURSE": {
       action.payload.navigate("/course-content");
       return { ...state, courseViewed: action.payload.course };
+    }
+
+    // hàm xử lý khi người dùng xóa course khỏi danh sách của họ
+    case "USERDELETECOURSEFROMMYLIST": {
+      console.log(action.payload.newUserLogged);
+
+      return { ...state, userLogged: action.payload.newUserLogged };
     }
 
     default:

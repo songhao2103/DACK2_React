@@ -3,12 +3,14 @@ import { useSelector } from "react-redux";
 import Course from "./Course";
 import { getListDataCourses } from "../api";
 import Loader from "../loader/Loader";
+import { useDebounce } from "../hookCustoms/useDebounce";
 
 //Component==================================================================
 const ListCourses = () => {
   const [indexPageList, setIndexPageList] = useState(0); //Lưu vị trí trang khi click vào các số chuyển trang
   const [changeArrangement, setChangeArrangement] = useState("rows");
   const [inputValue, setInputValue] = useState("");
+  const debouncedSearch = useDebounce(inputValue, 1000);
   const [filteredCourses, setFilteredCourses] = useState([]);
   const list = useRef(null); //lấy element list
   const coursePrice = useSelector((state) => state.coursePrice); //lấy ra trạng thái của các ô input ở phần giá
@@ -114,16 +116,20 @@ const ListCourses = () => {
     setChangeArrangement(value);
   };
 
-  //Hàm xử lí tìm kiếm courses
+  //Hàm xử lí thay đổi của input search
   const handleChangeInput = (event) => {
     const newInputValue = event.target.value;
     setInputValue(newInputValue);
+  };
+
+  //xử lý tìm kiếm
+  useEffect(() => {
     setFilteredCourses(() =>
       listDataCourses.filter((item) =>
-        item.name.toLowerCase().includes(newInputValue.toLowerCase())
+        item.name.toLowerCase().includes(debouncedSearch.toLowerCase())
       )
     );
-  };
+  }, [debouncedSearch]);
 
   return (
     <div>

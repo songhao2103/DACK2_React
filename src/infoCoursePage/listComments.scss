@@ -1,12 +1,14 @@
 .list_comments {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   margin-top: 50px;
 
   .comment {
-    border-bottom: 3px solid #ccc;
-    // padding-bottom: 20px;
+    // border-bottom: 3px solid #ccc;
+    padding: 10px 20px;
+    background-color: #e6e6e6;
+    border-radius: 10px;
     .desc {
       @include desc_gray;
     }
@@ -29,7 +31,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-top: 10px;
+      // margin-top: 10px;
       float: right;
       cursor: pointer;
 
@@ -61,6 +63,66 @@
 
         &:active {
           transform: scale(0.97);
+        }
+      }
+    }
+
+    .input_comment_reply {
+      background-color: #fff;
+      border-radius: 10px;
+      width: 90%;
+      float: inline-end;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      position: relative;
+
+      input {
+        padding: 10px 20px;
+        border-bottom: 2px solid #ccc;
+        width: 90%;
+      }
+
+      .icon {
+        display: none;
+        margin-right: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+
+      .icon.active {
+        display: block;
+        color: $Primary;
+      }
+      .close_reply {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        font-size: 1.4rem;
+        color: #727070;
+        cursor: pointer;
+      }
+    }
+
+    .box_list_comment_reply {
+      width: 80%;
+      // background-color: red;
+      margin: 30px 0 0 40px;
+      border-top: 2px solid #ccc;
+      padding-bottom: 20px;
+
+      .comment {
+        border-bottom: 1px solid #8b8a8a;
+        // background-color: #b6b6b6;
+        margin-bottom: 10px;
+        padding-bottom: 30px;
+      }
+
+      .content {
+        span {
+          color: black;
+          font-weight: 500;
         }
       }
     }

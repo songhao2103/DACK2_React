@@ -81,6 +81,8 @@ const logInReducer = (state, action) => {
           const userLogged = listUsers.find(
             (user) => user.account.email === state.formData.email
           );
+          console.log(userLogged);
+
           localStorage.setItem("accountIsSaved", JSON.stringify(userLogged));
         } else {
           localStorage.removeItem("accountIsSaved");
@@ -166,8 +168,6 @@ const LogIn = () => {
       },
     });
   };
-
-
 
   return (
     <div className="log_in">

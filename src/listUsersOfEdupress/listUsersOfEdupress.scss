@@ -1,0 +1,77 @@
+@import "./popupUser.scss";
+
+.list_users_of_edupress {
+  margin-top: 50px;
+
+  .title_h2 {
+    @include title_h2;
+  }
+
+  .box_options {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 50px;
+
+    .desc {
+      @include desc_gray;
+    }
+
+    .options {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      float: inline-end;
+      margin-bottom: 30px;
+
+      .search {
+        input {
+          padding: 10px 15px;
+          border: 1px solid #ccc;
+          width: 300px;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .table {
+    border: 2px solid $Dark_gray;
+    width: 100%;
+
+    .title_h5 {
+      @include title_h5;
+    }
+
+    .desc {
+      @include desc_gray;
+    }
+
+    .title {
+      background-color: #8b8b8b;
+    }
+
+    tr {
+      border: 1px solid $Dark_gray;
+      &:hover {
+        .desc {
+          color: $Black;
+          cursor: pointer;
+        }
+      }
+
+      th {
+        border: 1px solid $Dark_gray;
+        padding: 10px;
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+          width: 30%;
+        }
+      }
+    }
+
+    tr.active {
+      background-color: #ccc;
+    }
+  }
+}

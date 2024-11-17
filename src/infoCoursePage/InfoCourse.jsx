@@ -33,7 +33,9 @@ const InfoCourse = () => {
             <div className="icon">
               <i className="fa-solid fa-clipboard"></i>
             </div>
-            <p className="desc">{course.lessons.length} Lessons</p>
+            <p className="desc">
+              {course.lessons ? course.lessons.length : ""} Lessons
+            </p>
           </div>
         </div>
       </div>

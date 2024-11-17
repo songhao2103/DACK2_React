@@ -14,7 +14,7 @@ const InfoCoursePage = () => {
     }
 
     const checkCourse = userLogged.courses.find(
-      (course) => course.id === courseViewed.id
+      (id) => id === courseViewed.idCourse
     );
 
     if (!checkCourse) {

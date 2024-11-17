@@ -1,51 +1,119 @@
-.my_course {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 40px;
-  cursor: pointer;
+.box_my_course {
+  box-shadow: $Box-shadow1;
+  border-radius: 10px;
+  position: relative;
 
-  &:hover {
-    .title_h4 {
-      color: $Primary;
-    }
-  }
+  .my_course {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    // border: 1px solid #ccc;
 
-  .image img {
-    width: 200px;
-  }
+    width: 90%;
 
-  .right {
-    .title_h4 {
-      @include title_h4;
-      margin-bottom: 20px;
+    &:hover {
+      .title_h4 {
+        color: $Primary;
+      }
     }
 
-    .bottom {
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    .image img {
+      width: 200px;
+    }
 
-      .item {
+    .right {
+      .title_h4 {
+        @include title_h4;
+        margin-bottom: 20px;
+      }
+
+      .bottom {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 20px;
 
-        .icon {
-          font-size: 2.2rem;
-          color: $Primary;
-        }
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
 
-        .desc {
-          @include desc_gray;
+          .icon {
+            font-size: 2.2rem;
+            color: $Primary;
+          }
+
+          .desc {
+            @include desc_gray;
+          }
         }
+      }
+    }
+
+    &:hover {
+      .title_h2 {
+        color: $Primary;
       }
     }
   }
 
-  &:hover {
-    .title_h2 {
+  .icon_delete {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #a8a7a7;
+    font-size: 2.4rem;
+    cursor: pointer;
+
+    &:hover {
       color: $Primary;
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+
+  .box_alert {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    .alert {
+      background-color: #fff;
+      padding: 30px 50px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 20px;
+
+      .desc {
+        @include desc_black;
+        font-size: 2rem;
+        font-weight: 500;
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        gap: 30px;
+
+        .btn_primary {
+          @include btn_primary;
+        }
+
+        .btn_white {
+          @include btn_white;
+        }
+      }
     }
   }
 }

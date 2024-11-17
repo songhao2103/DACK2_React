@@ -1,4 +1,5 @@
 import { useEffect, useReducer, useState } from "react";
+import Loader from "../loader/Loader";
 import Course from "./Course";
 import LostsOfEditing from "./LostsOfEditing";
 import config from "../config";
@@ -78,8 +79,6 @@ const reducer = (state, action) => {
 
     //xử lý add courses
     case "ADDCOURSE": {
-
-
       return {
         ...state,
         formData: {
@@ -180,8 +179,6 @@ const reducer = (state, action) => {
         (_, index) => state.listChecked[index]
       );
 
-
-
       return {
         ...state,
         listSelectedCourses: newListSelectedCourses,
@@ -217,7 +214,6 @@ const reducer = (state, action) => {
           )
         : state.listDataCourses;
 
-
       return { ...state, listDataCoursesFiltered: newListDataCoursesFiltered };
     }
     default:
@@ -228,10 +224,12 @@ const reducer = (state, action) => {
 //function Component=================================================================================
 const ListCoursesOfPage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [statusFetchData, setStatusFetchData] = useState(false);
   const [listDataCourses, setListDataCourses] = useState([]);
 
   //lấy dữ liệu từ server
   const fetchListDataCourses = async () => {
+    setStatusFetchData(true);
     try {
       const response = await fetch(config.endpoint1 + "list-data-courses");
       if (!response.ok) {
@@ -241,6 +239,8 @@ const ListCoursesOfPage = () => {
       setListDataCourses(listDatas);
     } catch (error) {
       console.log("Lấy data từ server bị lỗi", error);
+    } finally {
+      setStatusFetchData(false);
     }
   };
 
@@ -476,8 +476,6 @@ const ListCoursesOfPage = () => {
 
   //hàm xử lý thay đổi của input search
   const handleChangeInputSearch = (e) => {
-
-
     dispatch({
       type: "CHANGEINPUTSEARCH",
       payload: {
@@ -488,8 +486,6 @@ const ListCoursesOfPage = () => {
 
   //hàm xử lý debounce
   useEffect(() => {
-
-
     const timerID = setTimeout(() => {
       dispatch({
         type: "DEBOUNCEINPUTSEARCH",
@@ -649,7 +645,10 @@ const ListCoursesOfPage = () => {
       )}
 
       {/* list courses */}
-      {
+
+      {statusFetchData ? (
+        <Loader />
+      ) : (
         <div className="list_courses">
           {state.listDataCoursesFiltered.map((course, index) => (
             <Course
@@ -664,7 +663,7 @@ const ListCoursesOfPage = () => {
             ></Course>
           ))}
         </div>
-      }
+      )}
     </div>
   );
 };

@@ -1,12 +1,13 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState, useMemo } from "react";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import config from "../config";
-import Loader from "../loader/Loader";
+import { actionInstructorAddLesson } from "../redux-store/actions/actions";
 
 const MyCourseContent = () => {
   const dataCourseFromRedux = useSelector((state) => state.courseViewed); //lấy dữ liệu về course đang được xem
   const userLogged = useSelector((state) => state.userLogged);
+  const dispatch = useDispatch();
   const [dataCourse, setDataCourse] = useState(dataCourseFromRedux);
 
   //lưu trạng hiện thị các file của lessons
@@ -110,19 +111,10 @@ const MyCourseContent = () => {
 
       setDataCourse(updatedDataCourse);
       setNameLesson("");
-      setFileAdded(null);
-
-      const listUsers = JSON.parse(localStorage.getItem("listUsers"));
-      const listCoursesOfUser = [...userLogged.courses];
-      const newListCoursesOfUser = listCoursesOfUser.map((course) =>
-        course.id === updatedDataCourse.id ? updatedDataCourse : course
-      );
-      const newUser = { ...userLogged, courses: newListCoursesOfUser };
-      const newListUsers = listUsers.map((user) =>
-        user.email === userLogged.email ? newUser : user
-      );
-
-      localStorage.setItem("listUsers", JSON.stringify(newListUsers));
+      setFileAdded(null); 
+      dispatch({
+        type: actionInstructorAddLesson.type,
+      });
     }
   };
 
@@ -162,8 +154,6 @@ const MyCourseContent = () => {
 
     localStorage.setItem("listUsers", JSON.stringify(newListUsers));
   };
-
-
 
   return (
     <div className="my_course_content">

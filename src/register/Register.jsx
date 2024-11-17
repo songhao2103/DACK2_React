@@ -103,6 +103,7 @@ const registerReducer = (state, action) => {
         const registrationAccount = {
           ...formDataCopy,
           id: new Date().getTime(),
+          key: "student",
         };
 
         //Cập nhật tài khoản vừa đăng ký lên localStorage

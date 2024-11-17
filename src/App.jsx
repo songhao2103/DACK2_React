@@ -24,9 +24,15 @@ function App() {
       const listCoursesOfJohnDoe = listDataCourses.filter(
         (course) => course.instructor === "John Doe"
       );
+      const listIdCourseOfKennyWhite = listCoursesOfKennyWhite.map(
+        (course) => course.idCourse
+      );
+      const listIdCourseOfJohnDoe = listCoursesOfJohnDoe.map(
+        (course) => course.idCourse
+      );
       return {
-        kennyWhite: listCoursesOfKennyWhite,
-        johnDoe: listCoursesOfJohnDoe,
+        kennyWhite: listIdCourseOfKennyWhite,
+        johnDoe: listIdCourseOfJohnDoe,
       };
     } catch (error) {
       console.log("Tải dữ liệu bị lỗi", error);
@@ -41,17 +47,30 @@ function App() {
       const listUsers = JSON.parse(localStorage.getItem("listUsers"));
       if (!listUsers) {
         const newListUsers = [
-          { account: { email: "admin", password: "123456", id: "admin" } },
+          {
+            account: {
+              email: "admin",
+              password: "123456",
+              id: "admin",
+              key: "admin",
+            },
+          },
           {
             account: {
               email: "kennyWhite",
               password: "123456",
               id: "kennyWhite",
+              key: "menter",
             },
             courses: coursesData.kennyWhite,
           },
           {
-            account: { email: "johnDoe", password: "123456", id: "johnDoe" },
+            account: {
+              email: "johnDoe",
+              password: "123456",
+              id: "johnDoe",
+              key: "menter",
+            },
             courses: coursesData.johnDoe,
           },
         ];
