@@ -17,6 +17,7 @@ const ListCourses = () => {
   const courseInstructors = useSelector((state) => state.courseInstructors); // Lấy ra trạng thái của các ô input phần instructors
   const [listDataCourses, setListDataCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   //lấy danh sách courses từ sever
   useEffect(() => {
     const fetchData = async () => {
@@ -36,26 +37,28 @@ const ListCourses = () => {
 
   //lọc course theo instructor
   const filteredInstructorCourses = useMemo(() => {
-    let prevListCourses = listDataCourses;
-    if (courseInstructors.all) {
-      prevListCourses = listDataCourses;
-    } else if (courseInstructors.kennyWhite) {
-      prevListCourses = prevListCourses.filter(
-        (course) => course.instructor === "Kenny White"
-      );
-    } else if (courseInstructors.johnDoe) {
-      prevListCourses = prevListCourses.filter(
-        (course) => course.instructor === "John Doe"
-      );
+    if (listDataCourses) {
+      let prevListCourses = listDataCourses;
+      if (courseInstructors.all) {
+        prevListCourses = listDataCourses;
+      } else if (courseInstructors.kennyWhite) {
+        prevListCourses = prevListCourses.filter(
+          (course) => course.instructor === "Kenny White"
+        );
+      } else if (courseInstructors.johnDoe) {
+        prevListCourses = prevListCourses.filter(
+          (course) => course.instructor === "John Doe"
+        );
+      }
+      return prevListCourses;
     }
-    return prevListCourses;
-  }, [courseInstructors]);
+  }, [courseInstructors, listDataCourses]);
 
   //sắp xếp lại danh sách courses theo giá
   const sortedCourses = useMemo(() => {
     let sortedCourses = filteredInstructorCourses;
     if (coursePrice.free) {
-      sortedCourses = sortedCourses.filter((course) => course.sale == 100);
+      sortedCourses = sortedCourses.filter((course) => course.sale === 100);
     } else if (coursePrice.increase) {
       sortedCourses = filteredInstructorCourses;
       sortedCourses.sort(

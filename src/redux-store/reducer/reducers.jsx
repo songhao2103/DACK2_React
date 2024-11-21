@@ -138,6 +138,7 @@ export const reducers = (state = initialState, action) => {
 
     //xử lý thay đổi changeEmail
     case "CHANGEEMAIL": {
+      debugger;
       const listUsers = JSON.parse(localStorage.getItem("listUsers"));
       const newListUsers = listUsers.map((user) => {
         if (user.account.id === state.userLogged.account.id) {
@@ -147,7 +148,8 @@ export const reducers = (state = initialState, action) => {
           };
           localStorage.setItem("accountIsSaved", JSON.stringify(newUser));
           return {
-            newUser,
+            ...user,
+            account: { ...user.account, email: action.payload.email },
           };
         } else {
           return user;
@@ -206,7 +208,6 @@ export const reducers = (state = initialState, action) => {
 
     // hàm xử lý khi người dùng xóa course khỏi danh sách của họ
     case "USERDELETECOURSEFROMMYLIST": {
-
       return { ...state, userLogged: action.payload.newUserLogged };
     }
 

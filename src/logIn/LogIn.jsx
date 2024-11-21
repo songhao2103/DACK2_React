@@ -83,7 +83,7 @@ const logInReducer = (state, action) => {
           );
           console.log(userLogged);
 
-          localStorage.setItem("accountIsSaved", JSON.stringify(userLogged));
+          localStorage.setItem("  ", JSON.stringify(userLogged));
         } else {
           localStorage.removeItem("accountIsSaved");
         }
